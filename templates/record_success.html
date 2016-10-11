@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">发送成功的消息</div>
+            <div class="panel-body">
+                <p>以下是发送成功的消息列表，各个字段的解释如下</p>
+                <p>msgMakeId:消息ID</p>
+                <p>sendTime:请求的发送时间</p>
+                <p>channel:消息渠道的名称</p>
+                <p>uin:用户ID</p>
+                <p>did:Device ID</p>
+                <p>responseTime:响应返回的时间</p>
+                <p>responseCode:响应返回的状态码</p>
+                <p>responseMessage:响应的消息体</p>
+                <p>status:响应的结果</p>
+            </div>
+        </div>
+        <div id="table">
+            <!-- Table -->
+            <table class="table table-bordered table-condensed">
+                <tr>
+                    <td>sendTime</td>
+                    <td>channel</td>
+                    <td>uin</td>
+                    <td>did</td>
+                    <td>responseCode</td>
+                    <td>responseMessage</td>
+                    <td>status</td>
+                </tr>
+                {% for info in infolist %}
+                    {% if info.status == "success" %}
+                        <tr class="success">
+                    {% elif info.status == "failed" %}
+                        <tr class="danger">
+                    {% else %}
+                        <tr class="warning"></tr>
+                    {% endif %}
+                            <td>{{ info.sendtime }}</td>
+                            <td>{{ info.queue }}</td>
+                            <td>{{ info.uin }}</td>
+                            <td>{{ info.did }}</td>
+                            <td>{{ info.code }}</td>
+                            <td>{{ info.retmessage }}</td>
+                            <td>{{ info.status }}<br/><a href="/detail/{{info.requestid}}">详情</a></td>
+                        </tr>
+                {% endfor %}
+            </table>
+        </div>
+{% endblock %}

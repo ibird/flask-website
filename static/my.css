@@ -1,0 +1,38 @@
+body{
+    width:800px;
+    margin:0 auto;
+    height:100%;
+}
+
+#header{
+    margin:20px 0 0 0;
+}
+
+#content{
+    margin:20px 0;
+}
+
+#footer{
+    margin:20px 0;
+    text-align:center;
+}
+
+#table{
+    margin:20px 0;
+}
+
+#table-search{
+    margin:20px 0;
+}
+
+#table-uin{
+    margin:20px 0;
+}
+
+#uin-add{
+    margin:20px 0;
+}
+
+#basic-addon2{
+    cursor:pointer;
+}

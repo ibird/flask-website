@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>消息中心管理系统</title>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/my.css" rel="stylesheet">
+    <script src="/static/bootstrap/js/jquery.js"></script>
+    <script src="/static/my.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="header">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" id="nav-index"><a href="/" >Home</a></li>
+            <li role="presentation" id="nav-success"><a href="/success" >成功纪录</a></li>
+            <li role="presentation" id="nav-fail"><a href="/fail" >失败纪录</a></li>
+            <li role="presentation" id="nav-search"><a href="/search" >消息查询</a></li>
+            <li role="presentation" id="nav-uin"><a href="/uin" >用户查询</a></li>
+        </ul>
+    </div>
+    <div id="content" >{% block content %}{% endblock %}</div>
+    <div id="footer" >
+    &copy; Copyright 2016 by ibird.
+    </div>
+</body>

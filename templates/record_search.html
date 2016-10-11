@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+        <div id="search" class="input-group">
+            <input id="search-argv" type="text" class="form-control" placeholder="输入 uin 或者 msgid 查询发送的消息" aria-describedby="basic-addon2">
+            <span class="input-group-addon" id="basic-addon2" onclick="search()">查询</span>
+        </div>  
+
+        <div id="table-search">
+            <!-- Table -->
+            <table class="table table-bordered table-condensed">
+                <tr id="table-search-menu">
+                    <td>sendTime</td>
+                    <td>channel</td>
+                    <td>uin</td>
+                    <td>responseCode</td>
+                    <td>responseMessage</td>
+                    <td>status</td>
+                </tr>
+            </table>
+        </div>
+{% endblock %}

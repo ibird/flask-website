@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+        <div class="panel panel-default">
+            <div class="panel-heading">消息详情</div>
+            <div class="panel-body">
+                <p>以下是发送成功的消息列表，各个字段的解释如下</p>
+                <p>msgMakeId:消息ID</p>
+                <p>sendTime:请求的发送时间</p>
+                <p>channel:消息渠道的名称</p>
+                <p>uin:用户ID</p>
+                <p>message:从消息队列拿到的消息</p>
+                <p>request:发出的请求，由url, body组成的字典</p>
+                <p>responseTime:响应返回的时间</p>
+                <p>responseCode:响应返回的状态码</p>
+                <p>responseMessage:响应的消息体</p>
+                <p>costTime:请求耗费的时间</p>
+                <p>status:响应的结果</p>
+            </div>
+        </div>
+        <div>
+            <table class="table table-bordered table-condensed">
+                <tr>
+                    <td>msgMakeId</td>
+                    <td>{{ info.msgid }}</td>
+                </tr>
+                <tr>
+                    <td>sendTime</td>
+                    <td>{{ info.sendtime }}</td>
+                </tr>
+                <tr>
+                    <td>channel</td>
+                    <td>{{ info.queue }}</td>
+                </tr>
+                <tr>
+                    <td>uin</td>
+                    <td>{{ info.uin }}</td>
+                </tr>
+                <tr>
+                    <td>message</td>
+                    <td>{{ info.message }}</td>
+                </tr>
+                <tr>
+                    <td>request</td>
+                    <td>{{ info.request }}</td>
+                </tr>
+                <tr>
+                    <td>responseTime</td>
+                    <td>{{ info.recvtime }}</td>
+                </tr>
+                <tr>
+                    <td>responseCode</td>
+                    <td>{{ info.code }}</td>
+                </tr>
+                <tr>
+                    <td>responseMessage</td>
+                    <td>{{ info.retmessage }}</td>
+                </tr>
+                <tr>
+                    <td>costTime</td>
+                    <td>{{ info.costtime }}</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>{{ info.status }}</td>
+                </tr>
+            </table>
+        </div>
+{% endblock %}

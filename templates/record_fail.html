@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">发送失败的消息</div>
+    <div class="panel-body">
+        <p>以下是发送失败的消息列表，各个字段的解释如下</p>
+        <p>dateTime:处理请求的时间</p>
+        <p>channel:消息渠道的名称</p>
+        <p>message:从队列拿到的消息</p>
+        <p>cause:错误的原因</p>
+    </div>
+</div>
+<div id="table">
+    <!-- Table -->
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <td>dateTime</td>
+            <td>channel</td>
+            <td>message</td>
+            <td>cause</td>
+        </tr>
+        {% for info in infolist %}
+        <tr>
+            <td>{{ info.datetime }}</td>
+            <td>{{ info.queue }}</td>
+            <td>{{ info.message }}</td>
+            <td>{{ info.cause }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

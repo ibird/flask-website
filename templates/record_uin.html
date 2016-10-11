@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+        <div id="uin" class="input-group">
+            <input id="uin-argv" type="text" class="form-control" placeholder="输入 uin 查询用户是否存在" aria-describedby="basic-addon2">
+            <span class="input-group-addon" id="basic-addon2" onclick="uin()">查询</span>
+        </div>  
+
+        <div id="table-uin">
+            <!-- Table -->
+            <table class="table table-bordered table-condensed">
+                <tr id="table-uin-menu">
+                    <td>channel</td>
+                    <td>uin</td>
+                    <td>token</td>
+                </tr>
+            </table>
+        </div>
+{% endblock %}
